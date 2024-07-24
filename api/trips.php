@@ -63,6 +63,15 @@ function addTrip() {
     $countries = $data["countries"];
     $available_spots = $data["available_spots"];
 
+    if (empty($countries)) {
+        $response = array(
+            "status" => "error",
+            "message" => "Please enter a value for countries."
+        );
+        echo json_encode($response);
+        return;
+    }
+
     $query = "INSERT INTO trips SET countries=:countries, available_spots=:available_spots";
     $stmt = $db->prepare($query);
     $stmt->bindParam(":countries", $countries);
