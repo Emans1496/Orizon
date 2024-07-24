@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="ORIZON_FAVICON.png">
+    <title>Orizon Travel API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="ORIZON.png" alt="Orizon Logo" style="width: 250px; display: block; margin: 0 auto; text-align: center;">
+        <h1 style="text-align: center; margin-top: 0px;">Orizon Travel Management System</h1>
+        <h2>Manage Countries</h2>
+        <div class="form-group">
+            <label for="countryName">Country Name:</label>
+            <input type="text" id="countryName">
+        </div>
+        <button onclick="addCountry()">Add Country</button>
+
+        <h2>Manage Trips</h2>
+        <div class="form-group">
+            <label for="tripCountries">Trip Countries:</label>
+            <input type="text" id="tripCountries">
+        </div>
+        <div class="form-group">
+            <label for="availableSpots">Available Spots:</label>
+            <input type="number" id="availableSpots">
+        </div>
+        <button onclick="addTrip()">Add Trip</button>
+
+        <h2>Filter Trips</h2>
+        <div class="form-group">
+            <label for="filterCountry">Country:</label>
+            <input type="text" id="filterCountry">
+        </div>
+        <div class="form-group">
+            <label for="filterSpots">Available Spots:</label>
+            <input type="number" id="filterSpots">
+        </div>
+        <button onclick="filterTrips()">Filter Trips</button>
+
+        <h2>Trips</h2>
+        <table id="tripsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Countries</th>
+                    <th>Available Spots</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
